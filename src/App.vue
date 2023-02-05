@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import products from './data/products'
+import products from './data/products.js';
 import ProductList from "./components/ProductList.vue";
 
 export default {
@@ -62,8 +62,16 @@ export default {
   components:{ProductList},
   data() {
     return {
-      products
+      page: 1,
+      productsPerPage: 3,
+      allItem: this.products
     }
-  }
+  },
+  computed: {
+    productss() {
+      const offset = (this.page - 1) * this.productsPerPage;
+      return this.products.slice(offset, offset + this.productsPerPage)
+    }
+  },
 }
 </script>
