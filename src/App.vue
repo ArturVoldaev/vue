@@ -64,13 +64,12 @@ export default {
     return {
       page: 1,
       productsPerPage: 3,
-      allItem: this.products
     }
   },
   computed: {
-    productss() {
+    products() {
       const offset = (this.page - 1) * this.productsPerPage;
-      return this.products.slice(offset, offset + this.productsPerPage)
+      return products.slice(offset, offset + this.productsPerPage);
     }
   },
 }
