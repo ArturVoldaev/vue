@@ -2,6 +2,7 @@
   <ul class="catalog__pagination pagination">
     <li class="pagination__item">
       <a
+        href="#"
         @click.prevent="previousPage"
         class="pagination__link pagination__link--arrow"
         :class="{ 'pagination__link--disabled': computedLeftArrow }"
@@ -57,7 +58,6 @@ export default {
     paginate(page) {
       this.$emit("paginate", page);
     },
-
     nextPage() {
       if (this.page < this.pages) {
         this.$emit("paginate", this.page + 1);
