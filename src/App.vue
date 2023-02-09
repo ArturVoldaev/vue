@@ -10,7 +10,7 @@
         :price-from.sync="filterPriceFrom"
         :price-to.sync="filterPriceTo"
         :category-id.sync="filterCategoryId"
-        :color="filterColor"
+        :color.sync="filterColor"
       />
 
       <section class="catalog">
@@ -79,7 +79,6 @@ export default {
         });
         filteredProducts = tempArr;
       }
-
       return filteredProducts;
     },
     products() {
